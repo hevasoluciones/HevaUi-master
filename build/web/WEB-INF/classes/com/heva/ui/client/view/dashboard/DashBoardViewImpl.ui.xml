@@ -1,0 +1,248 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:p="urn:import:ca.nanometrics.gflot.client">
+    <ui:style>
+        .hoverPoint {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        }
+    </ui:style>
+       
+    <g:HTMLPanel>
+        <body class="animated">
+            <div id="cl-wrapper">
+                <div class="cl-sidebar">
+                    <div class="cl-toggle">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="cl-navblock">
+                        <div class="menu-space">
+                            <div class="content">
+                                <div class="sidebar-logo">
+                                    <div class="logo">
+                                        <a href="index2.html"></a>
+                                    </div>
+                                </div>         
+                                <ul class="cl-vnavigation">
+                                    <li class="active">
+                                        <a id="dashBoardView" style="cursor:pointer; cursor: hand">
+                                            <i class="fa fa-home"></i>
+                                            <span>Dashboard</span>
+                                        </a>
+             
+                                    </li>
+                                    <li>
+                                        <a id="beaconsView" style="cursor:pointer; cursor: hand">
+                                            <img src="css/ico-beacon.svg"  width="20px" style="margin-right: 7px"/>
+                                            <span>Beacons</span>
+                                        </a>              
+                                    </li>
+                                    <li>
+                                        <a id="campaignView" style="cursor:pointer; cursor: hand">
+                                            <i class="fa fa-smile-o"></i>
+                                            <span>Campaign Management</span>
+                                        </a>              
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-right collapse-button" style="padding:7px 9px;">
+                            <input type="text" class="form-control search" placeholder="Search..." />
+                            <g:Button ui:field="sidebar_collapse" >
+                                <i ui:field="sidebar_collapseIcon" style="color:#fff;" class="fa fa-angle-left"></i>
+                            </g:Button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" id="pcont">
+                    <!-- TOP NAVBAR -->
+                    <div id="head-nav" class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right user-nav">
+                                    <li class="dropdown profile_menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img alt="Avatar" src="images/avatar6-2.jpg" />
+                                            <span ui:field="spanName"></span> 
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">My Account</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Messages</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#">Sign Out</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>			
+                            </div><!--/.nav-collapse animate-collapse -->
+                        </div>
+                    </div>   
+                    <div class="cl-mcont">		
+                        <div class="row">      
+                            <div class="col-md-3 col-sm-6">
+                                <div class="fd-tile detail clean tile-purple">
+                                    <div class="content">
+                                        <h1 id="newVisitors" class="text-left">0</h1>
+                                        <p>New Visitors</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-flag"></i>
+                                    </div>
+                                    <a class="details" id="nvdetails" style="cursor:pointer; cursor: hand">
+                                        Details 
+                                        <span>
+                                            <i class="fa fa-arrow-circle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>     
+                            <div class="col-md-3 col-sm-6">
+                                <div class="fd-tile detail clean tile-green">
+                                    <div class="content">
+                                        <h1 id="campaignTotals" class="text-left">0</h1>
+                                        <p>Campaign</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-comments"></i>
+                                    </div>
+                                    <a class="details" id="cdetails" style="cursor:pointer; cursor: hand">
+                                        Details 
+                                        <span>
+                                            <i class="fa fa-arrow-circle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>     
+                            <div class="col-md-3 col-sm-6">
+                                <div class="fd-tile detail clean tile-prusia">
+                                    <div class="content">
+                                        <h1 id="beaconTotals" class="text-left">0</h1>
+                                        <p>Beacons</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="css/ico-beacon.svg" width="100px" style="color: rgba(0, 0, 0, 0.05);font-size: 100px;line-height: 65px;"></img>
+                                    </div>
+                                    <a class="details" id="bdetails" style="cursor:pointer; cursor: hand">
+                                        Details 
+                                        <span>
+                                            <i class="fa fa-arrow-circle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="block-flat">
+                                    <div class="header">							
+                                        <h3>Visitors</h3>
+                                    </div>
+                                    <div class="content full-width">
+                                        <!--
+                                        <div id="chart3-legend" class="legend-container"></div>
+                                        <div id="chart3" style="height: 180px;"></div>
+                                        -->
+                                        <!--  -->
+                                        <g:HTMLPanel ui:field="hp">                                            
+                                                                                                                                        
+                                        </g:HTMLPanel>
+                                        <div class="counter-detail">
+                                            <div class="counter">
+                                                <div class="spk1"></div>
+                                                <p>Foreground Visits</p>
+                                                <h5 id="forevg"></h5>
+                                            </div>
+                                            <div class="counter">
+                                                <div class="spk2"></div>
+                                                <p>Background Visits</p>
+                                                <h5 id="backvg"></h5>                                                
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="block-flat">
+                                    <div class="header">							
+                                        <h3>Beacons</h3>
+                                    </div>         
+                                    <div class="content">
+                                        <table class="no-border hover">
+                                            <thead class="no-border">
+                                                <tr>
+                                                    <th style="width:50%;">Beacons</th>               
+                                                    <th class="text-right">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="no-border-y">
+                                                <tr>
+                                                    <td style="width:30%;">
+                                                        <span class="label label-success">Beacons on </span>
+                                                    </td>
+                 
+                                                    <td class="text-right color-success" id="bOn">
+                                                        <i class="fa fa-angle-up"></i>                                                    
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:30%;">
+                                                        <span class="label label-danger">Beacons off </span>
+                                                    </td>              
+                                                    <td class="text-right color-danger" id="bOff">
+                                                        <i class="fa fa-angle-down"></i>
+                                                        1%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:30%;">
+                                                        <span class="label label-warning">Beacons alert </span>
+                                                    </td>               
+                                                    <td class="text-right color-primary" id="bAlert">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        0
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>					
+                                    </div>  
+                                </div>      
+                            </div>
+                            <div class="col-md-12">
+                                <div class="block-flat">
+                                    <div class="header">							
+                                        <h3>Campaign</h3>
+                                    </div>
+                                    <div class="content">
+                                        <div class="table-responsive">
+                                            <table class="no-border hover list" ui:field="campaignTable">
+                                                <tbody class="no-border-y">
+                             
+                                                </tbody>
+                                            </table>		
+                                        </div>
+                                    </div>
+                                </div>	
+                            </div>		  
+                        </div>
+                    </div>	
+                </div> 	
+            </div>
+            <a href="#" class="back-to-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </body>
+    </g:HTMLPanel> 
+</ui:UiBinder>

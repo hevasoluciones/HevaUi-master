@@ -1,0 +1,40 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:p="urn:import:ca.nanometrics.gflot.client">
+    <ui:style>
+        
+    </ui:style>
+    <g:HTMLPanel>
+        <div id="chart3-legend" class="legend-container">
+            <table style="font-size:smaller;color:#545454">
+                <tbody>              
+                    <tr>
+                        <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                                <div style="width:4px;height:0;border:5px solid #31B89B;overflow:hidden"></div>
+                            </div>
+                        </td>
+                        <td class="legendLabel">Foreground Visits</td>
+                    </tr>
+                    <tr>
+                        <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                                <div style="width:4px;height:0;border:5px solid #D4D5D9;overflow:hidden"></div>
+                            </div>
+                        </td>
+                        <td class="legendLabel">Background Visits</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p:SimplePlot ui:field="plot" width="600px" height="180px" />
+        
+        <g:Label ui:field="hoverPoint"/>
+        
+        <g:Label ui:field="cursorPosition" />
+    </g:HTMLPanel>
+</ui:UiBinder>

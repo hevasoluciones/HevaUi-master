@@ -1,0 +1,28 @@
+/* 
+    Document   : mycss
+    Created on : 17-ago-2015, 15:03:55
+    Author     : Yasmani
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.handpointer {
+    cursor:pointer; 
+    cursor: hand;
+}
+
+.labelHover {
+    background-color : black;
+    color: white;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.whiteTheme {
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+

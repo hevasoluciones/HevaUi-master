@@ -1,0 +1,119 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+
+    </ui:style>
+    <g:HTMLPanel>
+        <div id="cl-wrapper">
+            <div class="cl-sidebar">
+                <div class="cl-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="cl-navblock">
+                    <div class="menu-space">
+                        <div class="content">
+                            <div class="sidebar-logo">
+                                <div class="logo">
+                                    <a href="index2.html"></a>
+                                </div>
+                            </div>
+         
+                            <ul class="cl-vnavigation">
+                                <li>
+                                    <a id="dashBoardView" style="cursor:pointer; cursor: hand">
+                                        <i class="fa fa-home"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+             
+                                </li>
+                                <li class="active">
+                                    <a id="beaconsView" style="cursor:pointer; cursor: hand">
+                                        <img src="css/ico-beacon.svg"  width="20px" style="margin-right: 7px"/>
+                                        <span>Beacons</span>
+                                    </a>
+              
+                                </li>
+                                <li>
+                                    <a id="campaignView" style="cursor:pointer; cursor: hand">
+                                        <i class="fa fa-smile-o"></i>
+                                        <span>Campaign Management</span>
+                                    </a>
+              
+                                </li>
+           
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-right collapse-button" style="padding:7px 9px;">
+                        <input type="text" class="form-control search" placeholder="Search..." />
+                        <g:Button ui:field="sidebar_collapse" >
+                            <i ui:field="sidebar_collapseIcon" style="color:#fff;" class="fa fa-angle-left"></i>
+                        </g:Button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" id="pcont">
+                <!-- TOP NAVBAR -->
+                <div id="head-nav" class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right user-nav">
+                                <li class="dropdown profile_menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img alt="Avatar" src="images/avatar6-2.jpg" />
+                                        <span ui:field="spanName"></span> 
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Messages</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Sign Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>			
+                        </div><!--/.nav-collapse animate-collapse -->
+                    </div>
+                </div>
+                
+                <div class="cl-mcont">		
+                    <div class="page-head">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a style="cursor:pointer; cursor: hand" id="beacon">Beacon</a>
+                            </li>
+                            <li class="active">Analytics</li>
+                        </ol>
+                    </div>	
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="block-flat">
+                                <div class="header">
+                                    <h3>Analytics</h3>
+                                </div>
+                                <div class="content">
+                                    <div id="site_statistics" style="height: 180px; padding: 0px; position: relative;"></div>
+                                </div>
+                            </div>
+                        </div>		
+                    </div>		
+                </div>	
+            </div> 
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

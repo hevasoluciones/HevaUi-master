@@ -1,0 +1,182 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui" >
+    <ui:style>
+
+    </ui:style>
+    <g:HTMLPanel>
+        <div id="cl-wrapper">
+            <div class="cl-sidebar">
+                <div class="cl-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="cl-navblock">
+                    <div class="menu-space">
+                        <div class="content">
+                            <div class="sidebar-logo">
+                                <div class="logo">
+                                    <a href="index2.html"></a>
+                                </div>
+                            </div>
+
+                            <ul class="cl-vnavigation">
+                                <li>
+                                    <a id="dashBoardView" style="cursor:pointer; cursor: hand">
+                                        <i class="fa fa-home"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <a id="beaconsView" style="cursor:pointer; cursor: hand">
+                                        <img src="css/ico-beacon.svg"  width="20px" style="margin-right: 7px"/>
+                                        <span>Beacons</span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a id="campaignView" style="cursor:pointer; cursor: hand">
+                                        <i class="fa fa-smile-o"></i>
+                                        <span>Campaign Management</span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-right collapse-button" style="padding:7px 9px;">
+                        <input type="text" class="form-control search" placeholder="Search..." />
+                        <g:Button ui:field="sidebar_collapse" >
+                            <i ui:field="sidebar_collapseIcon" style="color:#fff;" class="fa fa-angle-left"></i>
+                        </g:Button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" id="pcont">
+                <!-- TOP NAVBAR -->
+                <div id="head-nav" class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right user-nav">
+                                <li class="dropdown profile_menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img alt="Avatar" src="images/avatar6-2.jpg" />
+                                        <span ui:field="spanName"></span> 
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Messages</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Sign Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>			
+                        </div><!--/.nav-collapse animate-collapse -->
+                    </div>
+                </div>
+                <div class="cl-mcont">		
+                    <div class="page-head">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a style="cursor:pointer; cursor: hand" id="campaign">Campaign Management</a>
+                            </li>
+
+                            <li class="active">New Campaign</li>
+                        </ol>
+                    </div>	
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block-flat">
+                                <div class="header">							
+                                    <h3>
+                                        <div class="form-group">
+                                            <label>Tittle</label> 
+                                            <input type="text" placeholder="Enter the title here..." class="form-control"></input>
+                                        </div>
+                                    </h3>
+                                </div>
+                                
+                                	<div class="block-flat">
+						<div class="header">							
+							<h3>Content</h3>
+						</div>
+						<div class="content">
+              <textarea style="height:150px;" class="form-control" id="some-textarea"></textarea>
+            </div>
+					</div>
+                                <div class="content">
+                                    <div id="summernote"></div>
+                                </div>				          
+                                <div class="content">
+                                    <form class="form-horizontal group-border-dashed" action="#" style="border-radius: 0px;">            
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Featured image</label>
+                                            <div class="col-sm-6">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="http://placehold.it/190x140/7761A7/ffffff" alt="..."></img>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+
+                                                    </div>
+                                                    <div>
+                                                        <span class="btn btn-primary btn-file">
+                                                            <span class="fileinput-new">Select image</span>
+                                                            <span class="fileinput-exists">Change</span>
+                                                            <input type="file" name="..."></input>
+                                                        </span>
+                                                        <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Select Beacons</label>
+                                           
+                                            
+                                            <div class="col-sm-6">
+                                                <select class="select2">
+                                                    <optgroup label="Beacons">
+                                                        <option value="AK">tienda1</option>
+                                                        <option value="HI">tienda2</option>
+                                                    </optgroup>                                                 
+                                                </select>
+                                            </div>
+                                        </div>	
+                                        
+                                                   
+                                        <button  class="btn btn-default wizard-cancel">
+                                            <i class="fa fa-times"></i> Cancel</button>
+                                        <button  class="btn btn-success wizard-next">
+                                            <i class="fa fa-check"></i> Publish</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+            </div> 	
+        </div>  
+        
+ 
+
+
+
+    </g:HTMLPanel>
+    
+    
+
+</ui:UiBinder>
