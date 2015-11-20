@@ -112,5 +112,30 @@ public class DashBoardActivity extends AbstractActivity implements
 
     }
     
+    
+        @Override
+  public void deleteCampaign(int idCampaign) {
+      
+      
+
+        final DashBoardView dashBoardView = clientFactory.getDashBoardView();
+        clientFactory.getRpcService().deleteCampain(idCampaign, new AsyncCallback<String>() {
+
+           @Override
+           public void onFailure(Throwable caught) {
+               dashBoardView.showMessage("Error", "Error removed campaign", "error");
+           }
+
+           @Override
+           public void onSuccess(String result) {
+               
+               dashBoardView.showMessage("success", result, "info");;
+             
+           }
+       });
+      
+      
+  }
+    
 
 }

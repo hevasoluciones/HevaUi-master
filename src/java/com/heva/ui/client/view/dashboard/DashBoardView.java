@@ -37,6 +37,7 @@ public interface DashBoardView  extends IsWidget, MessagesPublisher {
     public interface Presenter {
 
         void goTo(Place place);
+        public void deleteCampaign(int idCmp);
         
         //public void someBussinesMetod();
     }

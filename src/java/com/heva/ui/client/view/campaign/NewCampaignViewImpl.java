@@ -70,35 +70,7 @@ public class NewCampaignViewImpl extends MessagesPublisherImpl implements NewCam
        
     }
     
-        private native static boolean isNotLoadedJquery() /*-{
-        return !$wnd['jQuery'] || (typeof $wnd['jQuery'] !== 'function');
-    }-*/;
-
      
-        
-        public static native void select2Runner() /*-{
-           var $select = $wnd.$(".select2").select2({
-          width: '100%'
-        });
-              
-             
-             }-*/;
-        
-     public static native void chekedRunner() /*-{
-     
-     
-     
-       $wnd.$('textarea.ckeditor').ckeditor();
-      CKEDITOR.disableAutoInline = true;
-       $wnd.$(".inline-editable").each(function(){
-        CKEDITOR.inline( $wnd.$(this)[0]);
-      });
-    
-       $wnd.$('#some-textarea').wysihtml5();
-       $wnd.$('#summernote').summernote();
-   
-             
-             }-*/;
 
     
     @Override
@@ -182,6 +154,18 @@ public class NewCampaignViewImpl extends MessagesPublisherImpl implements NewCam
             @Override
             public void onBrowserEvent(Event event) {
                 if (Event.ONCLICK == event.getTypeInt()) {
+                    listener.goTo(new CampaignPlace(""));
+                }
+            }
+        });
+        
+       Element publish = DOM.getElementById("Publish");
+        Event.sinkEvents(campaign, Event.ONCLICK);
+        Event.setEventListener(campaign, new EventListener() {
+            @Override
+            public void onBrowserEvent(Event event) {
+                if (Event.ONCLICK == event.getTypeInt()) {
+                    listener.createNewCampaign("", "", "", null, null);
                     listener.goTo(new CampaignPlace(""));
                 }
             }

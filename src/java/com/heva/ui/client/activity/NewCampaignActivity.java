@@ -7,11 +7,14 @@ package com.heva.ui.client.activity;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.heva.ui.client.ClientFactory;
 import com.heva.ui.client.place.AuthenticatorPlace;
 import com.heva.ui.client.place.NewCampaignPlace;
 import com.heva.ui.client.view.campaign.NewCampaignView;
+import com.heva.ui.shared.Beacon;
+import java.util.ArrayList;
 
 /**
  *
@@ -55,6 +58,26 @@ public class NewCampaignActivity  extends AbstractActivity implements
     @Override
     public void goTo(Place place) {
         clientFactory.getPlaceController().goTo(place);
+    }
+
+    @Override
+    public void createNewCampaign(String title, String content, String featuredImage, ArrayList<Beacon> beaconList, ArrayList<String> tagList) {
+       
+        final NewCampaignView campaignView= clientFactory.getNewCampaignView();
+            clientFactory.getRpcService().createNewCampain(title, content, featuredImage, beaconList, tagList, new AsyncCallback<String>() {
+
+            @Override
+            public void onFailure(Throwable caught) {
+               campaignView.showMessage("Error", "Error creating new campaing " + caught.getMessage(),"error" );
+            }
+
+            @Override
+            public void onSuccess(String result) {
+               
+                campaignView.showMessage("success", result, "info");
+            }
+        });
+        
     }
    
 }

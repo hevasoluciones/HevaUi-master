@@ -92,6 +92,8 @@ public class CampaignViewImpl extends MessagesPublisherImpl implements CampaignV
                 @Override
                 public void onBrowserEvent(Event event) {
                     if (Event.ONCLICK == event.getTypeInt()) {
+                        
+                        listener.deleteCampaign(cam.getId());
                         Window.alert("Borrar " + cam.getTitle());
                     }
                 }
